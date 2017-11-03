@@ -10,14 +10,14 @@ public class NewQueue<T> implements IQueue<T> {
 	public NewQueue() {
 		queue = new ArrayList<>();
 		head = 0;
-		tail = 0;
+		tail = -1;
 		max = -1;
 	}
 	
 	public NewQueue(int max) {
 		queue = new ArrayList<>();
 		head = 0;
-		tail = 0;
+		tail = -1;
 		this.max = max;
 	}
 
@@ -27,7 +27,7 @@ public class NewQueue<T> implements IQueue<T> {
 			throw new IllegalStateException();
 		}
 		
-		queue.add(tail++, obj);
+		queue.add(++tail, obj);
 		
 		return true;
 	}

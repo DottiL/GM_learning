@@ -10,14 +10,14 @@ public class Queue<T> {
 	public Queue() {
 		queue = new ArrayList<>();
 		head = 0;
-		tail = 0;
+		tail = -1;
 		max = -1;
 	}
 	
 	public Queue(int max) {
 		queue = new ArrayList<>();
 		head = 0;
-		tail = 0;
+		tail = -1;
 		this.max = max;
 	}
 	
@@ -26,7 +26,7 @@ public class Queue<T> {
 			throw new IllegalStateException();
 		}
 		
-		queue.add(tail++, obj);
+		queue.add(++tail, obj);
 		
 		return true;
 	}

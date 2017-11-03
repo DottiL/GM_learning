@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -21,6 +22,8 @@ public class Course {
 	private int seatsLeft;
 	//course's enrollments
 	private List<Enrollment> enrollments;
+	//course information renderer
+	private CourseInformationRenderer renderer;
 	
 	/**
 	 * Constructor that takes the course's name, number, description, location and seatsLeft.
@@ -102,5 +105,21 @@ public class Course {
 		}
 		
 		return studentList;
+	}
+	
+	private Map<String, String> getCourseInfoMap() {
+		Map<String, String> result = new HashMap<>();
+		result.put("number", number);
+		result.put("name", name);
+		result.put("description", description);
+		result.put("location", location);
+		result.put("seatsLeft", Integer.toString(seatsLeft));
+		
+		return result;
+	}
+	
+	public void renderCsv() {
+		renderer = new CsvCourseInformationRenderer(getCourseInfoMap(), getStudentList());
+		String result = renderer.renderInformation();
 	}
 }
