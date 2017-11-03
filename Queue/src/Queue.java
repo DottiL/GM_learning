@@ -26,7 +26,7 @@ public class Queue<T> {
 			throw new IllegalStateException();
 		}
 		
-		queue.add(++tail, obj);
+		queue.add(tail++, obj);
 		
 		return true;
 	}

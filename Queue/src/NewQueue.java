@@ -27,7 +27,7 @@ public class NewQueue<T> implements IQueue<T> {
 			throw new IllegalStateException();
 		}
 		
-		queue.add(++tail, obj);
+		queue.add(tail++, obj);
 		
 		return true;
 	}
