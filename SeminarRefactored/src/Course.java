@@ -11,21 +11,19 @@ import java.util.Map;
  */
 public class Course {
 	//course's name
-	private String name;
+	private final String name;
 	//course's number
-	private String number;
+	private final String number;
 	//course's description
-	private String description;
+	private final String description;
 	//course's location
-	private String location;
+	private final String location;
 	//course's seats left
-	private int seatsLeft;
+	private final int seatsLeft;
 	//starting date
 	private String startingDate;
 	//course's enrollments
 	private List<Enrollment> enrollments;
-	//course information renderer
-	private CourseInformationRenderer renderer;
 	
 	/**
 	 * Constructor that takes the course's name, number, description, location and seatsLeft.

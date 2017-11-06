@@ -5,7 +5,5 @@
  *
  */
 public class SeminarDetails {
-	//the seminar
-	private Seminar seminar;
 
 }
