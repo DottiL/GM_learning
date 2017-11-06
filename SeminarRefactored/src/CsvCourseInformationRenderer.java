@@ -20,6 +20,7 @@ public class CsvCourseInformationRenderer extends CourseInformationRenderer {
 		result += delimiter + courseInfo.get("description") + delimiter + separator;
 		result += delimiter + courseInfo.get("location") + delimiter + separator;
 		result += delimiter + courseInfo.get("seatsLeft") + delimiter;
+		result += delimiter + courseInfo.get("startingDate") + delimiter;
 		
 		result += "\n";
 		

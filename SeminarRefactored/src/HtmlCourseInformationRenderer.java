@@ -34,6 +34,7 @@ public class HtmlCourseInformationRenderer extends CourseInformationRenderer {
 		result += "<li>" + courseInfo.get("description") + "</li>";
 		result += "<li>" + courseInfo.get("location") + "</li>";
 		result += "<li>" + courseInfo.get("seatsLeft") + "</li>";
+		result += "<li>" + courseInfo.get("startingDate") + "</li>";
 		
 		result += "</ul>";
 		

@@ -18,6 +18,7 @@ public class RawCourseInformationRenderer extends CourseInformationRenderer {
 		result += courseInfo.get("description") + "\n";
 		result += courseInfo.get("location") + "\n";
 		result += courseInfo.get("seatsLeft") + "\n";
+		result += courseInfo.get("startingDate") + "\n";
 		
 		return result;
 	}

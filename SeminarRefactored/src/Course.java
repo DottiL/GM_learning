@@ -20,6 +20,8 @@ public class Course {
 	private String location;
 	//course's seats left
 	private int seatsLeft;
+	//starting date
+	private String startingDate;
 	//course's enrollments
 	private List<Enrollment> enrollments;
 	//course information renderer
@@ -32,12 +34,13 @@ public class Course {
 	 * @param number
 	 * @param description
 	 */
-	public Course(String name, String number, String description, String location, int seatsLeft) {
+	public Course(String name, String number, String description, String location, int seatsLeft, String startingDate) {
 		this.name = name;
 		this.number = number;
 		this.description = description;
 		this.location = location;
 		this.seatsLeft = seatsLeft;
+		this.startingDate = startingDate;
 	}
 	
 	/**
@@ -114,12 +117,20 @@ public class Course {
 		result.put("description", description);
 		result.put("location", location);
 		result.put("seatsLeft", Integer.toString(seatsLeft));
+		result.put("startingDate", startingDate);
 		
 		return result;
 	}
 	
-	public void renderCsv() {
-		renderer = new CsvCourseInformationRenderer(getCourseInfoMap(), getStudentList());
-		String result = renderer.renderInformation();
+	public String renderCsv() {
+		return new CsvCourseInformationRenderer(getCourseInfoMap(), getStudentList()).renderInformation();
+	}
+	
+	public String renderHtml() {
+		return new HtmlCourseInformationRenderer(getCourseInfoMap(), getStudentList()).renderInformation();
+	}
+	
+	public String renderRaw() {
+		return new RawCourseInformationRenderer(getCourseInfoMap(), getStudentList()).renderInformation();
 	}
 }
