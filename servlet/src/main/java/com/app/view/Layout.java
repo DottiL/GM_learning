@@ -1,7 +1,8 @@
 package com.app.view;
 
-import com.github.manliogit.javatags.element.Element;
 import static com.github.manliogit.javatags.lang.HtmlHelper.*;
+
+import com.github.manliogit.javatags.element.Element;
 
 public class Layout {
 
@@ -22,16 +23,19 @@ public class Layout {
 		          div(attr("class -> container"),
 		            div(attr("class -> jumbotron"),
 		              h1(
-		                "Hello World!"
+		                "Welcome"
 		              ),
-		              p(attr("class -> lead"),
-		                text("Hello world!")
-		              ),
-		              p(
-		                a(attr("class -> btn btn-lg btn-success","href -> #","role -> button"),
-		                  text("Sign up today")
+		              p(attr("class -> lead"), text("Please choose ...")),
+		              div(
+	            		a(attr("class -> lead", "href -> /course"),
+            				text("Courses")
 		                )
-		              )
+            		),
+		            div(
+	            		a(attr("class -> lead", "href -> /student"),
+	        				text("Students")
+		                )
+	        		)
 		            )
 		          )
 		        )

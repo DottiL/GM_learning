@@ -2,8 +2,6 @@ package com;
 
 import java.io.IOException;
 import java.sql.Connection;
-import java.util.ArrayList;
-import java.util.List;
 
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -15,7 +13,6 @@ import javax.sql.DataSource;
 
 import com.app.controller.Context;
 import com.app.controller.Controller;
-import com.seminar.Course;
 
 public class Servlet extends HttpServlet {
 
@@ -29,7 +26,6 @@ public class Servlet extends HttpServlet {
 //	_ds.setJdbcUrl("jdbc:sqlite:/path");
 	
 	private DataSource _ds;
-	public static List<Course> courses = new ArrayList<>();
 	
 	@Override
 	public void init() throws ServletException {

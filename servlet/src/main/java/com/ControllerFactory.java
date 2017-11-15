@@ -1,21 +1,21 @@
 package com;
 
-import static java.util.Arrays.asList;
+import static java.util.Arrays.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.app.controller.Controller;
-import com.app.controller.CsvController;
-import com.app.controller.course.AdminController;
-import com.app.controller.course.CreateController;
+import com.app.controller.CourseController;
+import com.app.controller.MainController;
+import com.app.controller.StudentController;
 
 public class ControllerFactory {
 
 	public List<Controller> create() {
 		return new ArrayList<>(asList(
-				new CsvController(), 
-				new CreateController(), 
-				new AdminController()));
+				new MainController(),
+				new CourseController(),
+				new StudentController()));
 	}
 }
